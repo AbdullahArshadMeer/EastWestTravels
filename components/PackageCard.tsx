@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Plane, Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import {  Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import type { Package } from "@/data/packages";
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
