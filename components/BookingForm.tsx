@@ -33,7 +33,7 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
     ].join("\n");
 
     window.open(
-      `https://wa.me/447814678543?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/923466953642?text=${encodeURIComponent(msg)}`,
       "_blank"
     );
     setSent(true);

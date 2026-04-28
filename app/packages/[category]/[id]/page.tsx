@@ -62,7 +62,7 @@ export default function PackageDetailPage() {
       .filter(Boolean)
       .join("\n");
 
-    window.open(`https://wa.me/447814678543?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/923466953642?text=${encodeURIComponent(msg)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };

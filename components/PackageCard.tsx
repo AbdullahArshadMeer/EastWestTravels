@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {  Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import type { Package } from "@/data/packages";
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
@@ -74,13 +74,13 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
 
         {/* Route + details */}
         <div className="space-y-2.5 mb-4">
-          {/* Flight route — bold cities, prominent line with airplane */}
+          {/* Flight route — bold cities, prominent line with airplane centered */}
           <div className="flex items-center gap-2 text-[13px]">
             <Image src="/images/airplane.png" alt="" width={18} height={18} className="object-contain flex-shrink-0" />
             <span className="font-bold text-ink whitespace-nowrap">{pkg.departFrom}</span>
             <span className="flex-1 relative mx-1">
               <span className="block border-t-2 border-dotted border-ink-soft/50" />
-              <span className="absolute -top-[10px] left-1/2 -translate-x-1/2">
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Image src="/images/airplane.png" alt="" width={20} height={20} className="object-contain" />
               </span>
             </span>

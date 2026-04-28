@@ -11,14 +11,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14">
           <div>
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-10 h-10 relative overflow-hidden flex-shrink-0">
-                <Image src="/images/logo.png" alt="East West Travels" fill className="object-contain scale-150" />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-20 w-20 relative flex-shrink-0">
+                <Image src="/icon2.png" alt="East West Travels" fill className="object-contain" />
               </div>
               <div className="leading-tight">
-                <div className="font-display text-[20px] font-bold text-ink">East West</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-ink-muted">Travels · Stoke</div>
-              </div>
+  <div style={{ fontFamily: 'Georgia, "Times New Roman", serif', color: '#3d6e2a' }} className="text-[26px] font-semibold italic">East West</div>
+  <div style={{ color: '#3d6e2a' }} className="text-[11px] font-semibold mt-0.5">Travels (Stoke on Trent) Ltd</div>
+</div>
             </div>
             <p className="text-sm text-ink-soft leading-relaxed mb-6">
               Your trusted partner for Hajj, Umrah, and global travel experiences since 2015. Based in Stoke-On-Trent, United Kingdom.

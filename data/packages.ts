@@ -94,7 +94,7 @@ export const umrahPackages: Package[] = [
     gallery: ["/images/mina.webp", "/images/kaaba.webp", "/images/madinah.webp", "/images/kaaba2.webp"],
     durationDays: 12, departFrom: "Manchester", arriveTo: "Jeddah",
     dateRange: "27 Jul – 8 Aug 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,495",
-    sharingOptions: [{ label: "Quad Sharing", price: "£1,350" }, { label: "Triple Sharing", price: "£1,450" }, { label: "Double Sharing", price: "£1,550" }],
+    sharingOptions: [{ label: "Quad Sharing", price: "£1,495" }, { label: "Triple Sharing", price: "£1,595" }, { label: "Double Sharing", price: "£1,695" }],
     features: ["Return flights from Manchester", "4-star hotel in Makkah", "4-star hotel in Madinah", "Half-board meals", "Visa processing", "All transfers included", "Guided Ziyarat", "24/7 customer support"],
     hotels: [
       { city: "Makkah", name: "Emaar Al Grand Hotel", stars: 4, meal: "Half Board" },
@@ -128,7 +128,7 @@ export const umrahPackages: Package[] = [
     id: "umrah-summer-rabi", name: "Summer Holidays Umrah in Rabi Ul Awwal", category: "umrah", country: "Saudi Arabia",
     image: "/images/madinah.webp",
     gallery: ["/images/madinah.webp", "/images/kaaba.webp", "/images/kaaba2.webp", "/images/mina.webp"],
-    durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah",
+    durationDays: 12, departFrom: "Birmingham/Manchester", arriveTo: "Jeddah",
     dateRange: "18 Aug – 30 Aug 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,495",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,495" }, { label: "Triple Sharing", price: "£1,595" }, { label: "Double Sharing", price: "£1,695" }],
     features: ["Return flights from Birmingham", "4-star hotel in Makkah", "4-star hotel in Madinah", "Half-board meals", "Visa processing", "All transfers included", "Ziyarat in both cities", "Special Rabi Ul Awwal programme"],

@@ -33,7 +33,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          <Link href="/" className="relative w-[150px] h-[200px]  -mt-[0px] -mb-[40px] ml-6">
+          <Link href="/" className="relative w-[150px] h-[200px]  -mt-[00px] -mb-[50px] ml-6">
             <Image src="/images/logo.png" alt="East West Travels" fill className="object-contain scale-150" />
           </Link>
 
