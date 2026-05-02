@@ -66,7 +66,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3 text-sm text-ink-soft"><Mail className="w-4 h-4 mt-0.5 text-brand-700 flex-shrink-0" /><a href="mailto:info@eastweststoke.co.uk" className="hover:text-brand-700">info@eastweststoke.co.uk</a></li>
-              <li className="flex items-start gap-3 text-sm text-ink-soft"><MapPin className="w-4 h-4 mt-0.5 text-brand-700 flex-shrink-0" /><span>Stoke-On-Trent, United Kingdom</span></li>
+              <li className="flex items-start gap-3 text-sm text-ink-soft"><MapPin className="w-4 h-4 mt-0.5 text-brand-700 flex-shrink-0" /><span>1 Beresford Street Stoke On Trent, United Kingdom St4 2EX </span></li>
             </ul>
           </div>
         </div>

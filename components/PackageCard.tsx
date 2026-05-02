@@ -7,7 +7,6 @@ import type { Package } from "@/data/packages";
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
   const [showFeatures, setShowFeatures] = useState(false);
-
   const detailUrl = `/packages/${pkg.category}/${pkg.id}`;
 
   return (
@@ -21,7 +20,6 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-transparent" />
-
         <div className="absolute top-3 left-3 right-3 flex items-start justify-between gap-2">
           {pkg.badge && (
             <span className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-50/90 backdrop-blur-sm text-amber-800 text-[11px] font-bold tracking-wide">
@@ -35,7 +33,6 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
             </span>
           )}
         </div>
-
         <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
           <div>
             <div className="text-white font-display text-[15px] font-bold leading-tight">{pkg.country}</div>
@@ -57,8 +54,39 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
           {pkg.name}
         </h3>
 
-        {/* Sharing options — forced single line, equal width */}
-        {pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
+        {/* MAKTAB TIERS — Hajj packages with maktabOptions */}
+        {pkg.maktabOptions && pkg.maktabOptions.length > 0 && (
+          <div className={`grid gap-2 mb-4 ${pkg.maktabOptions.length === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
+            {pkg.maktabOptions.map((tier, i) => {
+              const isFirst = i === 0; // Maktab A typically (premium)
+              return (
+                <div
+                  key={i}
+                  className={`text-center py-3 px-2 rounded-xl border-2 ${
+                    isFirst
+                      ? "border-amber-300 bg-amber-50/60"
+                      : "border-brand-600/30 bg-brand-50/50"
+                  }`}
+                >
+                  <div className={`text-[10px] font-bold uppercase tracking-wider leading-tight ${
+                    isFirst ? "text-amber-800" : "text-brand-700"
+                  }`}>
+                    {tier.label}
+                  </div>
+                  <div className={`text-[18px] font-extrabold mt-1 ${
+                    isFirst ? "text-amber-900" : "text-brand-700"
+                  }`}>
+                    {tier.sharingOptions[0].price}
+                  </div>
+                  <div className="text-[9px] text-ink-muted mt-0.5">from quad</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* SHARING OPTIONS — Umrah/Global packages with sharingOptions */}
+        {!pkg.maktabOptions && pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
           <div className="grid grid-cols-3 gap-1.5 mb-4">
             {pkg.sharingOptions.map((opt, i) => (
               <div
@@ -74,7 +102,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
 
         {/* Route + details */}
         <div className="space-y-2.5 mb-4">
-          {/* Flight route — bold cities, prominent line with airplane centered */}
+          {/* Flight route */}
           <div className="flex items-center gap-2 text-[13px]">
             <Image src="/images/airplane.png" alt="" width={18} height={18} className="object-contain flex-shrink-0" />
             <span className="font-bold text-ink whitespace-nowrap">{pkg.departFrom}</span>
@@ -131,7 +159,9 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
         <div className="mt-auto pt-4 border-t border-cream-200">
           <div className="flex items-end justify-between mb-4">
             <div>
-              <div className="text-[10px] font-semibold text-ink-muted tracking-wider uppercase">Start From</div>
+              <div className="text-[10px] font-semibold text-ink-muted tracking-wider uppercase">
+                {pkg.maktabOptions ? "From (Maktab D Plus)" : "Start From"}
+              </div>
               <div className="font-display text-[28px] font-extrabold text-ink leading-none mt-1">
                 {pkg.startFrom}
               </div>

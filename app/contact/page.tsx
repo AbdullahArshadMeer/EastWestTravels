@@ -78,10 +78,9 @@ export default function ContactPage() {
             </InfoCard>
             <InfoCard icon={Mail} title="Email">
               <a href="mailto:info@eastweststoke.co.uk" className="block hover:text-brand-700">info@eastweststoke.co.uk</a>
-              <a href="mailto:bookings@eastweststoke.co.uk" className="block hover:text-brand-700">bookings@eastweststoke.co.uk</a>
             </InfoCard>
-            <InfoCard icon={MapPin} title="Visit Us">East West Travels<br />(Stoke-On-Trent) Ltd<br />Stoke-On-Trent, United Kingdom</InfoCard>
-            <InfoCard icon={Clock} title="Opening Hours">Mon – Fri: 9am – 6pm<br />Sat: 10am – 4pm<br />Sun: Closed</InfoCard>
+            <InfoCard icon={MapPin} title="Visit Us">East West Travels<br />(Stoke-On-Trent) Ltd<br /> 1 Beresford Street Stoke On Trent, United Kingdom ST4 2EX</InfoCard>
+            <InfoCard icon={Clock} title="Opening Hours">Mon – Fri: 10am – 6pm<br />Sat: 10am – 3pm<br />Sun: Closed</InfoCard>
           </div>
         </div>
       </section>
