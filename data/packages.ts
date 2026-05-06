@@ -302,8 +302,8 @@ export const umrahPackages: Package[] = [
   },
   {
     id: "umrah-summer-jul", name: "Summer Holidays 2026 Umrah Package", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar2.jpg",
-    gallery: ["/images/emaar2.jpg", "/images/emaar3.jpg", "/images/saja3.jpg", "/images/kaaba2.webp", "/images/madinah.webp"],
+    image: "/images/saja1.jpg",
+    gallery: ["/images/saja1.jpg", "/images/saja3.jpg", "/images/emaar1.jpg", "/images/kaaba2.webp", "/images/madinah.webp"],
     durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "30 Jul – 11 Aug 2026", airline: "Saudi Airlines", rating: 5, reviews: 584, startFrom: "£1,450",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,450" }, { label: "Triple Sharing", price: "£1,550" }, { label: "Double Sharing", price: "£1,650" }],
@@ -320,8 +320,8 @@ export const umrahPackages: Package[] = [
   },
   {
     id: "umrah-summer-rabi", name: "Summer Holidays Umrah in Rabi Ul Awwal", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar3.jpg",
-    gallery: ["/images/emaar3.jpg", "/images/saja7.jpg", "/images/madinah.webp", "/images/emaar1.jpg", "/images/kaaba.webp"],
+    image: "/images/emaar2.jpg",
+    gallery: ["/images/emaar2.jpg", "/images/saja3.jpg", "/images/madinah.webp", "/images/saja7.jpg", "/images/kaaba.webp"],
     durationDays: 12, departFrom: "Birmingham/Manchester", arriveTo: "Jeddah",
     dateRange: "18 Aug – 30 Aug 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,495",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,495" }, { label: "Triple Sharing", price: "£1,595" }, { label: "Double Sharing", price: "£1,695" }],
@@ -340,8 +340,8 @@ export const umrahPackages: Package[] = [
   // ── OCTOBER HALF TERM PACKAGES (Oct – Nov 2026) ──
   {
     id: "umrah-oct-halfterm-14", name: "October Half Term Holidays 2026 – 14 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar1.jpg",
-    gallery: ["/images/emaar1.jpg", "/images/emaar2.jpg", "/images/saja8.jpg", "/images/kaaba.webp", "/images/madinah.webp"],
+    image: "/images/saja3.jpg",
+    gallery: ["/images/saja3.jpg", "/images/emaar2.jpg", "/images/saja8.jpg", "/images/kaaba.webp", "/images/madinah.webp"],
     durationDays: 14, departFrom: "Manchester", arriveTo: "Jeddah",
     dateRange: "20 Oct – 3 Nov 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,350",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,350" }, { label: "Triple Sharing", price: "£1,450" }, { label: "Double Sharing", price: "£1,550" }],
@@ -358,8 +358,8 @@ export const umrahPackages: Package[] = [
   },
   {
     id: "umrah-oct-halfterm-11", name: "October 2026 Half Term Holidays – 11 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar2.jpg",
-    gallery: ["/images/emaar2.jpg", "/images/saja1.jpg", "/images/emaar3.jpg", "/images/kaaba.webp", "/images/madinah.webp"],
+    image: "/images/emaar3.jpg",
+    gallery: ["/images/emaar3.jpg", "/images/saja1.jpg", "/images/emaar1.jpg", "/images/kaaba.webp", "/images/madinah.webp"],
     durationDays: 11, departFrom: "Manchester", arriveTo: "Jeddah",
     dateRange: "22 Oct – 2 Nov 2026", airline: "EgyptAir", rating: 5, reviews: 584, startFrom: "£1,350",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,350" }, { label: "Triple Sharing", price: "£1,450" }, { label: "Double Sharing", price: "£1,550" }],
@@ -376,8 +376,8 @@ export const umrahPackages: Package[] = [
   },
   {
     id: "umrah-oct-halfterm-9", name: "October Half Term Holidays 2026 Umrah – 9 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar3.jpg",
-    gallery: ["/images/emaar3.jpg", "/images/emaar1.jpg", "/images/saja3.jpg", "/images/kaaba2.webp", "/images/madinah.webp"],
+    image: "/images/saja7.jpg",
+    gallery: ["/images/saja7.jpg", "/images/emaar3.jpg", "/images/saja3.jpg", "/images/kaaba2.webp", "/images/madinah.webp"],
     durationDays: 9, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "25 Oct – 3 Nov 2026", airline: "Saudia Airline (Direct Flight)", rating: 5, reviews: 584, startFrom: "£1,395",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,395" }, { label: "Triple Sharing", price: "£1,495" }, { label: "Double Sharing", price: "£1,595" }],
@@ -396,8 +396,8 @@ export const umrahPackages: Package[] = [
   // ── WINTER DECEMBER PACKAGES (Dec 2026) ──
   {
     id: "umrah-winter-dec-12", name: "Warmer Winter December Holidays – 12 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar1.jpg",
-    gallery: ["/images/emaar1.jpg", "/images/saja7.jpg", "/images/emaar2.jpg", "/images/madinah.webp", "/images/kaaba.webp"],
+    image: "/images/kaaba.webp",
+    gallery: ["/images/kaaba.webp", "/images/emaar1.jpg", "/images/saja7.jpg", "/images/emaar2.jpg", "/images/madinah.webp"],
     durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "15 Dec – 27 Dec 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,595",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,595" }, { label: "Triple Sharing", price: "£1,695" }, { label: "Double Sharing", price: "£1,795" }],
@@ -414,8 +414,8 @@ export const umrahPackages: Package[] = [
   },
   {
     id: "umrah-winter-dec-11", name: "Warmer Winter December Holidays – 11 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar2.jpg",
-    gallery: ["/images/emaar2.jpg", "/images/saja8.jpg", "/images/emaar3.jpg", "/images/madinah.webp", "/images/kaaba2.webp"],
+    image: "/images/saja8.jpg",
+    gallery: ["/images/saja8.jpg", "/images/emaar2.jpg", "/images/emaar3.jpg", "/images/madinah.webp", "/images/kaaba2.webp"],
     durationDays: 11, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "20 Dec – 31 Dec 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,750",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,750" }, { label: "Triple Sharing", price: "£1,850" }, { label: "Double Sharing", price: "£1,950" }],
@@ -434,8 +434,8 @@ export const umrahPackages: Package[] = [
   // ── EASTER / SPRING PACKAGE (Mar – Apr 2026) ──
   {
     id: "umrah-easter-4star", name: "Easter 2026 4★ Umrah – (Holidays)", category: "umrah", country: "Saudi Arabia",
-    image: "/images/emaar3.jpg",
-    gallery: ["/images/emaar3.jpg", "/images/saja1.jpg", "/images/emaar1.jpg", "/images/madinah.webp", "/images/kaaba.webp"],
+    image: "/images/madinah.webp",
+    gallery: ["/images/madinah.webp", "/images/emaar3.jpg", "/images/saja1.jpg", "/images/emaar1.jpg", "/images/kaaba.webp"],
     durationDays: 11, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "29 Mar – 9 Apr 2026", airline: "Saudi Airlines", rating: 5, reviews: 584, startFrom: "£1,450",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,450" }, { label: "Triple Sharing", price: "£1,550" }, { label: "Double Sharing", price: "£1,650" }],
