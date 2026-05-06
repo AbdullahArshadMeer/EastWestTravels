@@ -11,7 +11,7 @@ export default function QuoteForm() {
     const t = encodeURIComponent(
       `Travel Quote\nFrom: ${data.from}\nTo: ${data.to}\nDate: ${data.date}\nTravelers: ${data.travelers}\nEmail: ${data.email}`
     );
-    window.open(`https://wa.me/447814678543?text=${t}`, "_blank");
+    window.open(`https://wa.me/447886857459?text=${t}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 3000);
   };

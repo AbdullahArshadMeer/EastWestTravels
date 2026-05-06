@@ -12,7 +12,7 @@ export default function ContactPage() {
     const t = encodeURIComponent(
       `New Enquiry\n\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nPackage: ${form.pkg || "General enquiry"}\n\nMessage:\n${form.message}`
     );
-    window.open(`https://wa.me/447814678543?text=${t}`, "_blank");
+    window.open(`https://wa.me/447886857459?text=${t}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 3000);
   };
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <button type="submit" className="btn-primary !px-7 !py-3.5 text-base">
                     {sent ? "Opening WhatsApp…" : "Send Enquiry"} {!sent && <Send className="w-4 h-4" />}
                   </button>
-                  <a href="https://wa.me/447814678543" target="_blank" rel="noopener noreferrer" className="btn-ghost !px-7 !py-3.5 text-base">
+                  <a href="https://wa.me/447886857459" target="_blank" rel="noopener noreferrer" className="btn-ghost !px-7 !py-3.5 text-base">
                     <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
                   </a>
                 </div>

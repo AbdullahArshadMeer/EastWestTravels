@@ -132,7 +132,7 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
     const msg = msgLines.join("\n");
 
     window.open(
-      `https://wa.me/447814678543?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/447886857459?text=${encodeURIComponent(msg)}`,
       "_blank"
     );
 
@@ -157,7 +157,7 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
         {/* Personal details */}
         <FormField icon={User} placeholder="Full Name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required />
         <FormField icon={Mail} placeholder="Enter your email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required />
-        <FormField icon={Phone} placeholder="+44 000 0000000" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required />
+        <FormField icon={Phone} placeholder="+447886857459" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required />
 
         {/* Number of travelers */}
         <div>

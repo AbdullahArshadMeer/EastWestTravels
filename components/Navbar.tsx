@@ -26,7 +26,7 @@ export default function Navbar() {
   const isActive = (path: string) =>
     pathname === path ? "text-brand-700" : "text-ink hover:text-brand-700";
 
-  const waLink = "https://wa.me/447814678543";
+  const waLink = "https://wa.me/447886857459";
 
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur border-b border-ink-line/60" : "bg-cream-50/80 backdrop-blur-sm"}`}>

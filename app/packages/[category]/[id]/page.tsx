@@ -62,7 +62,7 @@ export default function PackageDetailPage() {
       .filter(Boolean)
       .join("\n");
 
-    window.open(`https://wa.me/923466953642?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/447886857459?text=${encodeURIComponent(msg)}`, "_blank");
     setSent(true);
     setTimeout(() => setSent(false), 4000);
   };
@@ -234,7 +234,7 @@ export default function PackageDetailPage() {
               <form onSubmit={handleSubmit} className="space-y-3">
                 <FormInput icon={User} placeholder="Full Name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required />
                 <FormInput icon={Mail} placeholder="Enter your email" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required />
-                <FormInput icon={Phone} placeholder="+44 000 0000000" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required />
+                <FormInput icon={Phone} placeholder="+447886857459" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} required />
                 <FormInput icon={Users} placeholder="Number of travelers" type="number" value={form.travelers} onChange={(v) => setForm({ ...form, travelers: v })} />
 
                 {pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
