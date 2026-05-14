@@ -8,7 +8,7 @@ export default function HajjPage() {
   return (
     <>
       <PageHero
-        eyebrow="Hajj 2026"
+        eyebrow="Hajj 2027"
         title="Hajj Packages — UK Departures"
         subtitle="Three tiers of Hajj packages with experienced guides, carefully chosen hotels near Haram, and complete logistics handled from the UK."
         breadcrumb={[{ label: "Packages" }, { label: "Hajj" }]}
@@ -20,7 +20,7 @@ export default function HajjPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div>
               <span className="eyebrow">Explore Hajj Packages</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-ink tracking-tight">Hajj 2026 — {hajjPackages.length} tiers</h2>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-ink tracking-tight">Hajj 2027 — {hajjPackages.length} tiers</h2>
             </div>
             <p className="text-sm text-ink-muted max-w-sm">Book early — Hajj allocation is limited by the Ministry of Hajj quota.</p>
           </div>

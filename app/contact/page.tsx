@@ -41,9 +41,9 @@ export default function ContactPage() {
                   <label className="block text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-muted mb-1">Package</label>
                   <select value={form.pkg} onChange={(e) => setForm({ ...form, pkg: e.target.value })} className="w-full bg-transparent text-sm text-ink focus:outline-none">
                     <option value="">Select a package…</option>
-                    <option>Hajj 2026 — Standard</option>
-                    <option>Hajj 2026 — Premium</option>
-                    <option>Hajj 2026 — VIP</option>
+                    <option>Hajj 2027 — Standard</option>
+                    <option>Hajj 2027 — Premium</option>
+                    <option>Hajj 2027 — VIP</option>
                     <option>Umrah — Economy</option>
                     <option>Umrah — Standard</option>
                     <option>Umrah — Deluxe</option>
