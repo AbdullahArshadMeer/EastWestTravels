@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Clock, Send, MessageCircle, Phone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 
 export default function ContactPage() {
@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Let's plan your journey"
-        subtitle="WhatsApp us or fill in the form below. Our Stoke-On-Trent team is here Monday to Saturday."
+        subtitle="Call our office, WhatsApp us, or fill in the form below. Our Stoke-On-Trent team is here Monday to Saturday."
         breadcrumb={[{ label: "Contact" }]}
       />
 
@@ -41,12 +41,13 @@ export default function ContactPage() {
                   <label className="block text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-muted mb-1">Package</label>
                   <select value={form.pkg} onChange={(e) => setForm({ ...form, pkg: e.target.value })} className="w-full bg-transparent text-sm text-ink focus:outline-none">
                     <option value="">Select a package…</option>
-                    <option>Hajj 2027 — Standard</option>
-                    <option>Hajj 2027 — Premium</option>
-                    <option>Hajj 2027 — VIP</option>
-                    <option>Umrah — Economy</option>
-                    <option>Umrah — Standard</option>
-                    <option>Umrah — Deluxe</option>
+                    <option>Hajj 2027 — 20 Days</option>
+                    <option>Hajj 2027 — 16 Days</option>
+                    <option>Hajj 2027 — 21 Days Luxury</option>
+                    <option>Umrah — Summer Holidays</option>
+                    <option>Umrah — October Half Term</option>
+                    <option>Umrah — December Holidays</option>
+                    <option>Umrah — Easter</option>
                     <option>Global Tour — Turkey</option>
                     <option>Global Tour — Dubai</option>
                     <option>Global Tour — Custom</option>
@@ -72,15 +73,33 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-2 space-y-4">
-            <InfoCard icon={MessageCircle} title="WhatsApp Us">
-              <a href="https://wa.me/447814678543" target="_blank" rel="noopener noreferrer" className="block hover:text-brand-700">07814 678 543</a>
-              <a href="https://wa.me/447886857459" target="_blank" rel="noopener noreferrer" className="block hover:text-brand-700 mt-1">07886 857 459</a>
+            {/* Office landline */}
+            <InfoCard icon={Phone} title="Call Our Office">
+              <a href="tel:01782860407" className="block hover:text-brand-700 font-semibold text-base">01782 860407</a>
+              <span className="block text-xs text-ink-muted mt-1">Mon – Sat, business hours</span>
             </InfoCard>
+
+            {/* WhatsApp numbers (2) */}
+            <InfoCard icon={MessageCircle} title="WhatsApp Us">
+              <a href="https://wa.me/447886857459" target="_blank" rel="noopener noreferrer" className="block hover:text-brand-700">07886 857 459</a>
+              <a href="https://wa.me/447969076913" target="_blank" rel="noopener noreferrer" className="block hover:text-brand-700 mt-1">07969 076 913</a>
+            </InfoCard>
+
             <InfoCard icon={Mail} title="Email">
               <a href="mailto:info@eastweststoke.co.uk" className="block hover:text-brand-700">info@eastweststoke.co.uk</a>
             </InfoCard>
-            <InfoCard icon={MapPin} title="Visit Us">East West Travels<br />(Stoke-On-Trent) Ltd<br /> 1 Beresford Street Stoke On Trent, United Kingdom ST4 2EX</InfoCard>
-            <InfoCard icon={Clock} title="Opening Hours">Mon – Fri: 10am – 6pm<br />Sat: 10am – 3pm<br />Sun: Closed</InfoCard>
+
+            <InfoCard icon={MapPin} title="Visit Us">
+              East West Travels<br />
+              (Stoke-On-Trent) Ltd<br />
+              1 Beresford Street Stoke On Trent, United Kingdom ST4 2EX
+            </InfoCard>
+
+            <InfoCard icon={Clock} title="Opening Hours">
+              Mon – Fri: 10am – 6pm<br />
+              Sat: 10am – 3pm<br />
+              Sun: Closed
+            </InfoCard>
           </div>
         </div>
       </section>
