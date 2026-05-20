@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const images = [
-  { src: "/images/six.jpeg", alt: "Sacred sites", span: "col-span-2 row-span-1" },
-  { src: "/images/one.jpeg", alt: "Kaaba during Hajj", span: "col-span-2 row-span-2" },
-  { src: "/images/two.jpeg", alt: "Masjid an-Nabawi", span: "col-span-1 row-span-2" },
-  { src: "/images/three.jpeg", alt: "Holy Mosque", span: "col-span-1 row-span-1" },
-  { src: "/images/four.jpeg", alt: "Pilgrimage journey", span: "col-span-1 row-span-1" },
-  { src: "/images/five.jpeg", alt: "Sacred sites", span: "col-span-2 row-span-1" },
+  { src: "/images/kaaba.webp", alt: "Sacred sites", span: "col-span-2 row-span-1" },
+  { src: "/images/madinah.webp", alt: "Kaaba during Hajj", span: "col-span-2 row-span-2" },
+  { src: "/images/quba.jpg", alt: "Masjid an-Nabawi", span: "col-span-1 row-span-2" },
+  { src: "/images/madinah2.jpg", alt: "Holy Mosque", span: "col-span-1 row-span-1" },
+  { src: "/images/kaaba2.webp", alt: "Pilgrimage journey", span: "col-span-1 row-span-1" },
+  { src: "/images/mina.webp", alt: "Sacred sites", span: "col-span-2 row-span-1" },
    
 ];
 export default function Gallery() {

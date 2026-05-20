@@ -321,7 +321,7 @@ export const umrahPackages: Package[] = [
   {
     id: "umrah-summer-rabi", name: "Summer Holidays Umrah in Rabi Ul Awwal", category: "umrah", country: "Saudi Arabia",
     image: "/images/emaar2.jpg",
-    gallery: ["/images/emaar2.jpg", "/images/saja3.jpg", "/images/madinah.webp", "/images/saja7.jpg", "/images/kaaba.webp"],
+    gallery: ["/images/emaar2.jpg", "/images/saja3.jpg", "/images/emaar4.jpg", "/images/saja7.jpg", "/images/saja7.jpg"],
     durationDays: 12, departFrom: "Birmingham/Manchester", arriveTo: "Jeddah",
     dateRange: "18 Aug – 30 Aug 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,495",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,495" }, { label: "Triple Sharing", price: "£1,595" }, { label: "Double Sharing", price: "£1,695" }],
@@ -396,7 +396,7 @@ export const umrahPackages: Package[] = [
   // ── WINTER DECEMBER PACKAGES (Dec 2026) ──
   {
     id: "umrah-winter-dec-12", name: "Warmer Winter December Holidays – 12 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/kaaba.webp",
+    image: "/images/emaar5.jpg",
     gallery: ["/images/kaaba.webp", "/images/emaar1.jpg", "/images/saja7.jpg", "/images/emaar2.jpg", "/images/madinah.webp"],
     durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "15 Dec – 27 Dec 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,595",
@@ -434,7 +434,7 @@ export const umrahPackages: Package[] = [
   // ── EASTER / SPRING PACKAGE (Mar – Apr 2026) ──
   {
     id: "umrah-easter-4star", name: "Easter 2026 4★ Umrah – (Holidays)", category: "umrah", country: "Saudi Arabia",
-    image: "/images/madinah.webp",
+    image: "/images/saja2.jpg",
     gallery: ["/images/madinah.webp", "/images/emaar3.jpg", "/images/saja1.jpg", "/images/emaar1.jpg", "/images/kaaba.webp"],
     durationDays: 11, departFrom: "Birmingham", arriveTo: "Jeddah",
     dateRange: "29 Mar – 9 Apr 2026", airline: "Saudi Airlines", rating: 5, reviews: 584, startFrom: "£1,450",
