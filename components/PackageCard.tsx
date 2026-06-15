@@ -2,12 +2,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Star, ChevronDown, ChevronUp, ArrowRight, Tent } from "lucide-react";
 import type { Package } from "@/data/packages";
 
 export default function PackageCard({ pkg }: { pkg: Package }) {
   const [showFeatures, setShowFeatures] = useState(false);
   const detailUrl = `/packages/${pkg.category}/${pkg.id}`;
+  const isHajj = pkg.category === "hajj";
 
   return (
     <div className="group bg-white rounded-2xl border border-cream-200 overflow-hidden hover:shadow-lift transition-all duration-300 flex flex-col">
@@ -50,43 +51,23 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
 
       {/* Content */}
       <div className="p-5 flex-1 flex flex-col">
-        <h3 className="font-display text-[17px] font-bold text-ink leading-snug mb-3 line-clamp-2">
+        {/* Package name — LARGER for better visibility */}
+        <h3 className="font-display text-[22px] md:text-[24px] font-extrabold text-ink leading-tight mb-3 text-center">
           {pkg.name}
         </h3>
 
-        {/* MAKTAB TIERS — Hajj packages with maktabOptions */}
-        {pkg.maktabOptions && pkg.maktabOptions.length > 0 && (
-          <div className={`grid gap-2 mb-4 ${pkg.maktabOptions.length === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
-            {pkg.maktabOptions.map((tier, i) => {
-              const isFirst = i === 0; // Maktab A typically (premium)
-              return (
-                <div
-                  key={i}
-                  className={`text-center py-3 px-2 rounded-xl border-2 ${
-                    isFirst
-                      ? "border-amber-300 bg-amber-50/60"
-                      : "border-brand-600/30 bg-brand-50/50"
-                  }`}
-                >
-                  <div className={`text-[10px] font-bold uppercase tracking-wider leading-tight ${
-                    isFirst ? "text-amber-800" : "text-brand-700"
-                  }`}>
-                    {tier.label}
-                  </div>
-                  <div className={`text-[18px] font-extrabold mt-1 ${
-                    isFirst ? "text-amber-900" : "text-brand-700"
-                  }`}>
-                    {tier.sharingOptions[0].price}
-                  </div>
-                  <div className="text-[9px] text-ink-muted mt-0.5">from quad</div>
-                </div>
-              );
-            })}
+        {/* Maktab A badge — centered, only for Hajj packages */}
+        {isHajj && (
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-[12px] font-bold">
+              <Tent className="w-3.5 h-3.5 text-amber-700" />
+              Maktab A — Premium Tent
+            </div>
           </div>
         )}
 
-        {/* SHARING OPTIONS — Umrah/Global packages with sharingOptions */}
-        {!pkg.maktabOptions && pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
+        {/* Sharing options — single line, equal width */}
+        {pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
           <div className="grid grid-cols-3 gap-1.5 mb-4">
             {pkg.sharingOptions.map((opt, i) => (
               <div
@@ -159,9 +140,7 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
         <div className="mt-auto pt-4 border-t border-cream-200">
           <div className="flex items-end justify-between mb-4">
             <div>
-              <div className="text-[10px] font-semibold text-ink-muted tracking-wider uppercase">
-                {pkg.maktabOptions ? "From (Maktab D Plus)" : "Start From"}
-              </div>
+              <div className="text-[10px] font-semibold text-ink-muted tracking-wider uppercase">Start From</div>
               <div className="font-display text-[28px] font-extrabold text-ink leading-none mt-1">
                 {pkg.startFrom}
               </div>
