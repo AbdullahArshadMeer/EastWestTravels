@@ -150,7 +150,7 @@ export const hajjPackages: Package[] = [
       { date: "10–13 May", location: "Azizia Apartments" },
       { date: "13–18 May", location: "Mina (Hajj rituals)" },
       { date: "18–20 May", location: "Azizia Apartments" },
-      { date: "20–23 May", location: "Saja Hotel, Makkah" },
+      { date: "20–23 May", location: "Saja Al Madinah, Madinah" },
     ],
     ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah", "Mina, Arafat & Muzdalifah"],
     ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Seven Mosques"],
@@ -186,7 +186,7 @@ export const hajjPackages: Package[] = [
     hotels: [
       { city: "Azizia", name: "Azizia Apartments", stars: 4, meal: "Half Board" },
       { city: "Mina", name: "Maktab A — Premium Tent", stars: 5, meal: "Half Board" },
-      { city: "Makkah", name: "Saja Hotel", stars: 5, meal: "Half Board" },
+      { city: "Madinah", name: "Saja Al Madinah", stars: 5, meal: "Half Board" },
     ],
     features: [
       "⚠ Flights NOT included — land package only",
