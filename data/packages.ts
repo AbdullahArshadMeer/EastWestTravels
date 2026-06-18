@@ -206,7 +206,7 @@ export const hajjPackages: Package[] = [
       { date: "9–13 May", location: "Azizia Apartments" },
       { date: "13–18 May", location: "Mina (Hajj rituals)" },
       { date: "18–20 May", location: "Azizia Apartments" },
-      { date: "20–23 May", location: "Saja Hotel, Makkah" },
+      { date: "20–23 May", location: "Saja al Madinah, Madinah" },
     ],
     ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah", "Mina, Arafat & Muzdalifah", "Exhibition of the Two Holy Mosques"],
     ziyarahMadinah: [],
