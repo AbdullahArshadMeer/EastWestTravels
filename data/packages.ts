@@ -180,8 +180,6 @@ export const hajjPackages: Package[] = [
     startFrom: "£6,700",
     sharingOptions: [
       { label: "Quad Sharing", price: "£6,700" },
-      { label: "Triple Sharing", price: "£7,000" },
-      { label: "Double Sharing", price: "£7,300" },
     ],
     hotels: [
       { city: "Azizia", name: "Azizia Apartments", stars: 4, meal: "Half Board" },

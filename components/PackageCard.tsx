@@ -67,12 +67,21 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
         )}
 
         {/* Sharing options — single line, equal width */}
+       {/* Sharing options — adjusts layout based on count */}
         {pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
-          <div className="grid grid-cols-3 gap-1.5 mb-4">
+          <div className={`mb-4 ${
+            pkg.sharingOptions.length === 1
+              ? "flex justify-center"
+              : pkg.sharingOptions.length === 2
+              ? "grid grid-cols-2 gap-1.5"
+              : "grid grid-cols-3 gap-1.5"
+          }`}>
             {pkg.sharingOptions.map((opt, i) => (
               <div
                 key={i}
-                className="text-center py-2.5 px-1 rounded-xl border-2 border-brand-600/20 bg-brand-50/40"
+                className={`text-center py-2.5 px-1 rounded-xl border-2 border-brand-600/20 bg-brand-50/40 ${
+                  pkg.sharingOptions!.length === 1 ? "w-1/2 min-w-[140px]" : ""
+                }`}
               >
                 <div className="text-[9px] font-bold text-ink-soft uppercase tracking-wider leading-tight">{opt.label}</div>
                 <div className="text-[15px] font-extrabold text-brand-700 mt-1">{opt.price}</div>

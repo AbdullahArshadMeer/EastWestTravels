@@ -132,13 +132,21 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
           </div>
         )}
 
-        {/* Sharing options (for non-Hajj packages) */}
+        {/* Sharing options (for packages without Maktab options) */}
         {!pkg.maktabOptions && pkg.sharingOptions && pkg.sharingOptions.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+          <div className={`mb-6 ${
+            pkg.sharingOptions.length === 1
+              ? "flex justify-center"
+              : pkg.sharingOptions.length === 2
+              ? "grid grid-cols-1 sm:grid-cols-2 gap-3"
+              : "grid grid-cols-1 sm:grid-cols-3 gap-3"
+          }`}>
             {pkg.sharingOptions.map((opt, i) => (
               <div
                 key={i}
-                className="text-center py-3 px-4 rounded-xl border border-cream-200 bg-cream-50"
+                className={`text-center py-3 px-4 rounded-xl border border-cream-200 bg-cream-50 ${
+                  pkg.sharingOptions!.length === 1 ? "w-full sm:w-1/2 max-w-md" : ""
+                }`}
               >
                 <span className="text-sm text-ink">{opt.label} </span>
                 <span className="font-bold text-ink">{opt.price}</span>
