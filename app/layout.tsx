@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import HajjPopup from "@/components/HajjPopup";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans text-ink bg-white min-h-screen flex flex-col">
         <Navbar />
+        <HajjPopup />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
       </body>
