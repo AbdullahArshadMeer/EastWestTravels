@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import Link from "next/link";
 import { Star, Plane, Calendar, Clock, Building2, ChevronRight, MapPin } from "lucide-react";
 import ImageGallery from "./ImageGallery";
@@ -9,23 +7,6 @@ import type { Package } from "@/data/packages";
 
 export default function PackageDetail({ pkg }: { pkg: Package }) {
   const categoryLabel = pkg.category.charAt(0).toUpperCase() + pkg.category.slice(1);
-
-  // Track which Maktab tier customer wants to book (passed to booking form)
-  const [bookingMaktab, setBookingMaktab] = useState(
-    pkg.maktabOptions ? pkg.maktabOptions.length - 1 : 0
-  );
-
-  // For BookingForm: pass package with the selected Maktab pre-filled
-  const currentMaktab = pkg.maktabOptions?.[bookingMaktab];
-  const packageForBooking = currentMaktab
-    ? {
-        ...pkg,
-        sharingOptions: currentMaktab.sharingOptions,
-        hotels: currentMaktab.hotels,
-        startFrom: currentMaktab.sharingOptions[0].price,
-        name: `${pkg.name} (${currentMaktab.label})`,
-      }
-    : pkg;
 
   return (
     <>
@@ -50,8 +31,6 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
               {pkg.name}
             </h1>
             <div className="h-[3px] w-16 bg-brand-600 rounded-full mt-3 mb-4" />
-
-            {/* Rating */}
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: pkg.rating }).map((_, i) => (
@@ -61,9 +40,10 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
               <span className="text-sm text-ink-muted">{pkg.reviews} Customer Reviews</span>
             </div>
           </div>
-
           <div className="text-right">
-            <div className="text-xs font-semibold text-ink-muted uppercase tracking-wider">Start From</div>
+            <div className="text-xs font-semibold text-ink-muted uppercase tracking-wider">
+              {pkg.maktabOptions ? "From (Maktab C)" : "Start From"}
+            </div>
             <div className="font-display text-3xl md:text-4xl font-extrabold text-ink leading-none mt-1">
               {pkg.startFrom}
               {pkg.startFrom !== "On request" && <span className="text-base font-normal text-ink-muted">/Person</span>}
@@ -76,7 +56,6 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
           <div className="space-y-5 mb-8">
             {pkg.maktabOptions.map((opt, i) => (
               <div key={i} className="bg-white rounded-2xl border-2 border-cream-200 overflow-hidden">
-                {/* Maktab header bar */}
                 <div className="bg-brand-50 border-b border-cream-200 px-5 py-3 flex items-center justify-between flex-wrap gap-2">
                   <div>
                     <div className="font-display text-lg font-bold text-brand-700">{opt.label}</div>
@@ -91,7 +70,6 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
                   </div>
                 </div>
 
-                {/* Sharing prices */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-5">
                   {opt.sharingOptions.map((sharing, j) => (
                     <div
@@ -109,7 +87,6 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
                   ))}
                 </div>
 
-                {/* Hotels for this Maktab */}
                 <div className="px-5 pb-5 pt-1 border-t border-cream-200">
                   <div className="text-[10px] font-semibold tracking-[0.1em] uppercase text-ink-muted mb-2 mt-3">
                     Accommodation
@@ -125,8 +102,6 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
                     ))}
                   </div>
                 </div>
-
-                
               </div>
             ))}
           </div>
@@ -195,7 +170,7 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
           </div>
         )}
 
-        {/* Itinerary section (multi-stop Hajj packages) */}
+        {/* Itinerary */}
         {pkg.itinerary && pkg.itinerary.length > 0 && (
           <div className="bg-white rounded-2xl border border-cream-200 p-5 md:p-6 mb-6">
             <h3 className="font-display text-base font-bold text-ink mb-4 flex items-center gap-2">
@@ -204,10 +179,7 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {pkg.itinerary.map((day, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 p-3 rounded-xl bg-cream-50 border border-cream-200"
-                >
+                <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-cream-50 border border-cream-200">
                   <div className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-bold">
                     {i + 1}
                   </div>
@@ -230,16 +202,15 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
         )}
 
         {/* Gallery + Booking Form */}
-        <div id="booking-form-section" className="grid lg:grid-cols-5 gap-8 mb-12 scroll-mt-24">
+        <div className="grid lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-3">
             <ImageGallery images={pkg.gallery} alt={pkg.name} />
           </div>
           <div className="lg:col-span-2">
-            <BookingForm pkg={packageForBooking} />
+            <BookingForm pkg={pkg} />
           </div>
         </div>
 
-        {/* Tabs */}
         <PackageTabs pkg={pkg} />
       </div>
     </>
