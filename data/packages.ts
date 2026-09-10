@@ -211,7 +211,7 @@ export const hajjPackages: Package[] = [
   },
 ];
 export const umrahPackages: Package[] = [
-  
+
   // ── OCTOBER HALF TERM PACKAGES (Oct – Nov 2026) ──
   {
     id: "umrah-oct-halfterm-14", name: "October Half Term Holidays 2026 – 14 Days", category: "umrah", country: "Saudi Arabia",
@@ -306,14 +306,14 @@ export const umrahPackages: Package[] = [
     ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Seven Mosques"],
   },
 
- 
+
 
   // ── WINTER 2026/27 PACKAGES (Dec 2026 – Jan 2027) ──
   {
     id: "umrah-winter-2026-manchester", name: "12 Days 4★ Umrah Package – Manchester", category: "umrah", country: "Saudi Arabia",
     image: "/images/emaar1.jpg",
     gallery: ["/images/emaar1.jpg", "/images/emaar2.jpg", "/images/saja1.jpg", "/images/madinah.webp", "/images/kaaba.webp"],
-    durationDays: 12, departFrom: "Manchester", arriveTo: "Jeddah",
+    durationDays: 12, departFrom: "Manchester", arriveTo: "Jeddah / Madinah",
     dateRange: "21 Dec 2026 – 2 Jan 2027", airline: "EgyptAir (Indirect)", rating: 5, reviews: 584, startFrom: "£1,695",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,695" }, { label: "Triple Sharing", price: "£1,850" }, { label: "Double Sharing", price: "£2,095" }],
     features: ["Return flights from Madinah", "Indirect flight with EgyptAir", "4-star hotel in Makkah (Bed & Breakfast)", "4-star hotel in Madinah (Room Only)", "Visa processing", "All transfers included", "5-star upgrade available — limited seats", "Flexible payment plans"],
@@ -331,7 +331,7 @@ export const umrahPackages: Package[] = [
     id: "umrah-winter-2026-birmingham", name: "12 Days 4★ Umrah Package – Birmingham", category: "umrah", country: "Saudi Arabia",
     image: "/images/emaar2.jpg",
     gallery: ["/images/emaar2.jpg", "/images/emaar1.jpg", "/images/saja3.jpg", "/images/madinah.webp", "/images/kaaba2.webp"],
-    durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah ",
+    durationDays: 12, departFrom: "Birmingham", arriveTo: "Jeddah / Madinah",
     dateRange: "22 Dec 2026 – 3 Jan 2027", airline: "EgyptAir (Indirect)", rating: 5, reviews: 584, startFrom: "£1,695",
     sharingOptions: [{ label: "Quad Sharing", price: "£1,695" }, { label: "Triple Sharing", price: "£1,850" }, { label: "Double Sharing", price: "£2,095" }],
     features: ["Return flights from Madinah", "Indirect flight with EgyptAir", "4-star hotel in Makkah (Bed & Breakfast)", "4-star hotel in Madinah (Room Only)", "Visa processing", "All transfers included", "5-star upgrade available — limited seats", "Flexible payment plans"],
@@ -348,7 +348,7 @@ export const umrahPackages: Package[] = [
 ];
 
 export const globalPackages: Package[] = [
-  
+ 
 ];
 
 export function findPackage(category: string, id: string): Package | undefined {
