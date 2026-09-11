@@ -336,9 +336,9 @@ export default function PackageDetailPage() {
                       </div>
                       <div className="text-sm text-ink-soft mb-1">{h.name}</div>
                       <div className="flex items-center gap-1 text-sm">
-                        {Array.from({ length: h.stars }).map((_, j) => (
-                          <Star key={j} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                        ))}
+                      {h.stars ? Array.from({ length: h.stars }).map((_, j) => (
+  <Star key={j} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+)) : null}
                       </div>
                       {h.meal && <div className="text-xs text-ink-muted mt-2">Meal Plan: {h.meal}</div>}
                     </div>
