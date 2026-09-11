@@ -40,175 +40,311 @@ export type Package = {
 
 export const hajjPackages: Package[] = [
   {
-    id: "hajj-2027-20-days",
-    name: "20 Days Hajj Package 2027",
-    category: "hajj",
-    country: "Saudi Arabia",
-    image: "/images/anjum1.jpg",
-    gallery: [
-      "/images/anjum1.jpg",
-      "/images/anjum2.jpg",
-      "/images/saja1.jpg",
-      "/images/saja3.jpg",
-      "/images/saja7.jpg",
-      "/images/saja8.jpg",
-    ],
-    durationDays: 20,
-    departFrom: "Manchester",
-    arriveTo: "Jeddah",
-    dateRange: "3 May – 23 May 2027",
-    airline: "To Be Confirmed",
-    rating: 5,
-    reviews: 0,
-    startFrom: "£8,495",
-    sharingOptions: [
-      { label: "Quad Sharing", price: "£8,495" },
-      { label: "Triple Sharing", price: "£8,795" },
-      { label: "Double Sharing", price: "£9,095" },
-    ],
-    hotels: [
-      { city: "Madinah", name: "Anjum Hotel", stars: 5, meal: "Half Board" },
-      { city: "Azizia", name: "Azizia Apartments", stars: 4, meal: "Half Board" },
-      { city: "Mina", name: "Maktab A — Premium Tent", stars: 5, meal: "Half Board" },
-      { city: "Makkah", name: "Saja Hotel", stars: 5, meal: "Half Board" },
-    ],
-    features: [
-      "Return flights from Manchester",
-      "Premium Maktab A tent in Mina — closest to Jamarat",
-      "Anjum Hotel Madinah & Saja Hotel Makkah",
-      "Azizia accommodation included",
-      "Half board meals",
-      "Visa processing",
-      "All ground transfers",
-      "Experienced guide & group leader",
-    ],
-    available: true,
-    popular: true,
-    description: "Our flagship 20-day Hajj package with premium 5-star accommodation at Anjum Hotel Madinah and Saja Hotel Makkah. Includes Maktab A (premium tent) for your Mina accommodation. Designed for pilgrims who want comfort and proximity to Haram throughout their sacred journey.",
-    transport: "Private air-conditioned coaches for all transfers. Inter-city travel between Madinah, Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites including Arafat and Muzdalifah.",
-    itinerary: [
-      { date: "3–10 May", location: "Anjum Hotel, Madinah" },
-      { date: "10–13 May", location: "Azizia Apartments" },
-      { date: "13–18 May", location: "Mina (Hajj rituals)" },
-      { date: "18–20 May", location: "Azizia Apartments" },
-      { date: "20–23 May", location: "Saja Hotel, Makkah" },
-    ],
-    ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah", "Mina, Arafat & Muzdalifah", "Exhibition of the Two Holy Mosques"],
-    ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Masjid al-Jummah", "Seven Mosques", "Date Farms Visit"],
-  },
+  id: "hajj-2027-20-days",
+  name: "20 Days Hajj Package 2027",
+  category: "hajj",
+  country: "Saudi Arabia",
+  image: "/images/anjum1.jpg",
+  gallery: [
+    "/images/anjum1.jpg",
+    "/images/anjum2.jpg",
+    "/images/saja1.jpg",
+    "/images/saja3.jpg",
+    "/images/saja7.jpg",
+    "/images/saja8.jpg",
+  ],
+  durationDays: 20,
+  departFrom: "Manchester",
+  arriveTo: "Jeddah",
+  dateRange: "3 May – 23 May 2027",
+  airline: "To Be Confirmed",
+  rating: 5,
+  reviews: 0,
+  startFrom: "£8,495",
 
-  {
-    id: "hajj-2027-16-days",
-    name: "16 Days Hajj Package 2027",
-    category: "hajj",
-    country: "Saudi Arabia",
-    image: "/images/saja1.jpg",
-    gallery: [
-      "/images/saja1.jpg",
-      "/images/saja3.jpg",
-      "/images/anjum1.jpg",
-      "/images/anjum2.jpg",
-      "/images/saja7.jpg",
-      "/images/saja8.jpg",
-    ],
-    durationDays: 16,
-    departFrom: "Manchester",
-    arriveTo: "Jeddah",
-    dateRange: "7 May – 23 May 2027",
-    airline: "To Be Confirmed",
-    rating: 5,
-    reviews: 0,
-    startFrom: "£8,250",
-    sharingOptions: [
-      { label: "Quad Sharing", price: "£8,250" },
-      { label: "Triple Sharing", price: "£8,500" },
-      { label: "Double Sharing", price: "£8,750" },
-    ],
-    hotels: [
-      { city: "Madinah", name: "Anjum Hotel", stars: 5, meal: "Half Board" },
-      { city: "Azizia", name: "Azizia Apartments", stars: 4, meal: "Half Board" },
-      { city: "Mina", name: "Maktab A — Premium Tent", stars: 5, meal: "Half Board" },
-      { city: "Makkah", name: "Saja Hotel", stars: 5, meal: "Half Board" },
-    ],
-    features: [
-      "Return flights from Manchester",
-      "Premium Maktab A tent in Mina — closest to Jamarat",
-      "Anjum Hotel Madinah & Saja Hotel Makkah",
-      "Azizia accommodation included",
-      "Half board meals",
-      "Visa processing",
-      "All ground transfers",
-      "Shorter trip — 16 days total",
-    ],
-    available: true,
-    description: "A 16-day Hajj package with the same premium Anjum and Saja hotels as our 20-day option, including Maktab A for Mina. Ideal for pilgrims with limited time who don't want to compromise on hotel quality.",
-    transport: "Private air-conditioned coaches for all transfers. Inter-city travel between Madinah, Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites.",
-    itinerary: [
-      { date: "7–10 May", location: "Anjum Hotel, Madinah" },
-      { date: "10–13 May", location: "Azizia Apartments" },
-      { date: "13–18 May", location: "Mina (Hajj rituals)" },
-      { date: "18–20 May", location: "Azizia Apartments" },
-      { date: "20–23 May", location: "Saja Hotel, Makkah" },
-    ],
-    ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah", "Mina, Arafat & Muzdalifah"],
-    ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Seven Mosques"],
-  },
+  sharingOptions: [
+    { label: "Quad Sharing", price: "£8,495" },
+    { label: "Triple Sharing", price: "£8,795" },
+    { label: "Double Sharing", price: "£9,095" },
+  ],
 
-  {
-    id: "hajj-2027-14-days",
-    name: "14 Days Hajj Package 2027",
-    category: "hajj",
-    country: "Saudi Arabia",
-    image: "/images/saja3.jpg",
-    gallery: [
-      "/images/saja3.jpg",
-      "/images/saja7.jpg",
-      "/images/saja8.jpg",
-      "/images/saja1.jpg",
-      "/images/kaaba.webp",
-      "/images/madinah.webp",
-    ],
-    durationDays: 14,
-    departFrom: "Saudi Arabia",
-    arriveTo: "Jeddah",
-    dateRange: "9 May – 23 May 2027",
-    airline: "Flights Not Included",
-    rating: 5,
-    reviews: 0,
-    startFrom: "£6,700",
-    sharingOptions: [
-      { label: "Quad Sharing", price: "£6,700" },
-      { label: "Triple Sharing", price: "£7,150" },
-      { label: "Double Sharing", price: "£7,600" },
-    ],
-    hotels: [
-      { city: "Azizia", name: "Azizia Apartments", stars: 4, meal: "Half Board" },
-      { city: "Mina", name: "Maktab A — Premium Tent", stars: 5, meal: "Half Board" },
-      { city: "Makkah", name: "Saja Hotel", stars: 5, meal: "Half Board" },
-    ],
-    features: [
-      "⚠ Flights NOT included — land package only",
-      "Premium Maktab A tent in Mina — closest to Jamarat",
-      "Saja Hotel Makkah (5-star)",
-      "Azizia accommodation included",
-      "Half board meals",
-      "Visa processing",
-      "All ground transfers in Saudi Arabia",
-      "Experienced guide & group leader",
-    ],
-    badge: "Land Package",
-    available: true,
-    description: "Our land-only 14-day Hajj package — perfect for pilgrims who prefer to arrange their own flights or are travelling from outside the UK. Includes Maktab A (premium tent) for Mina. Package starts on arrival in Jeddah and includes all accommodation (Azizia, Mina tent, Saja Hotel Makkah), meals, transfers, and Hajj rituals. Flights are NOT included.",
-    transport: "All ground transport within Saudi Arabia included — airport pickup from Jeddah, transfers to Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites including Arafat and Muzdalifah. Flights to Jeddah must be arranged separately.",
-    itinerary: [
-      { date: "9–13 May", location: "Azizia Apartments" },
-      { date: "13–18 May", location: "Mina (Hajj rituals)" },
-      { date: "18–20 May", location: "Azizia Apartments" },
-      { date: "20–23 May", location: "Saja Hotel, Makkah" },
-    ],
-    ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah", "Mina, Arafat & Muzdalifah", "Exhibition of the Two Holy Mosques"],
-    ziyarahMadinah: [],
-  },
+  hotels: [
+    {
+      city: "Makkah",
+      name: "Anjum Hotel Makkah",
+      meal: "Half Board",
+    },
+    {
+      city: "Azizia",
+      name: "Jawhara Maysan Hotel",
+      meal: "Full Board",
+      roomType: "Separate Room",
+      separateRoomRates: {
+        triple: "£325 per person",
+        double: "£650 per person",
+      },
+    },
+    {
+      city: "Mina",
+      name: "Maktab A — Premium Tent",
+      meal: "Half Board",
+    },
+    {
+      city: "Madinah",
+      name: "Saja By Warwick Madinah",
+      meal: "Half Board",
+    },
+  ],
+
+  features: [
+    "Return flights from Manchester",
+    "Premium Maktab A tent in Mina — closest to Jamarat",
+    "Anjum Hotel Makkah & Saja By Warwick Madinah",
+    "Jawhara Maysan Hotel in Azizia",
+    "Azizia separate room available",
+    "Azizia full board meals",
+    "Half board meals in Makkah, Madinah & Mina",
+    "Visa processing",
+    "All ground transfers",
+    "Experienced guide & group leader",
+  ],
+
+  available: true,
+  popular: true,
+
+  description:
+    "Our flagship 20-day Hajj package with premium accommodation at Anjum Hotel Makkah and Saja By Warwick Madinah. Includes Maktab A (premium tent) for your Mina accommodation and Jawhara Maysan Hotel in Azizia with full board. Azizia separate rooms are available with additional charges. Designed for pilgrims who want comfort and convenience throughout their sacred journey.",
+
+  transport:
+    "Private air-conditioned coaches for all transfers. Inter-city travel between Madinah, Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites including Arafat and Muzdalifah.",
+
+  itinerary: [
+    { date: "3–10 May", location: "Saja By Warwick Madinah" },
+    { date: "10–13 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "13–18 May", location: "Mina (Hajj rituals)" },
+    { date: "18–20 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "20–23 May", location: "Anjum Hotel Makkah" },
+  ],
+
+  ziyarahMakkah: [
+    "Jabal al-Nour (Cave of Hira)",
+    "Jabal Thawr",
+    "Masjid al-Jinn",
+    "Hudaibiyah",
+    "Mina, Arafat & Muzdalifah",
+    "Exhibition of the Two Holy Mosques",
+  ],
+
+  ziyarahMadinah: [
+    "Masjid al-Quba",
+    "Masjid al-Qiblatayn",
+    "Mount Uhud & Martyrs Cemetery",
+    "Masjid al-Jummah",
+    "Seven Mosques",
+    "Date Farms Visit",
+  ],
+},
+
+{
+  id: "hajj-2027-16-days",
+  name: "16 Days Hajj Package 2027",
+  category: "hajj",
+  country: "Saudi Arabia",
+  image: "/images/saja1.jpg",
+  gallery: [
+    "/images/saja1.jpg",
+    "/images/saja3.jpg",
+    "/images/anjum1.jpg",
+    "/images/anjum2.jpg",
+    "/images/saja7.jpg",
+    "/images/saja8.jpg",
+  ],
+  durationDays: 16,
+  departFrom: "Manchester",
+  arriveTo: "Jeddah",
+  dateRange: "7 May – 23 May 2027",
+  airline: "To Be Confirmed",
+  rating: 5,
+  reviews: 0,
+  startFrom: "£8,250",
+
+  sharingOptions: [
+    { label: "Quad Sharing", price: "£8,250" },
+    { label: "Triple Sharing", price: "£8,500" },
+    { label: "Double Sharing", price: "£8,750" },
+  ],
+
+  hotels: [
+    {
+      city: "Madinah",
+      name: "Saja By Warwick Madinah",
+      meal: "Half Board",
+    },
+    {
+      city: "Azizia",
+      name: "Jawhara Maysan Hotel",
+      meal: "Full Board",
+      roomType: "Separate Room",
+      separateRoomRates: {
+        triple: "£325 per person",
+        double: "£650 per person",
+      },
+    },
+    {
+      city: "Mina",
+      name: "Maktab A — Premium Tent",
+      meal: "Half Board",
+    },
+    {
+      city: "Makkah",
+      name: "Anjum Hotel Makkah",
+      meal: "Half Board",
+    },
+  ],
+
+  features: [
+    "Return flights from Manchester",
+    "Premium Maktab A tent in Mina — closest to Jamarat",
+    "Anjum Hotel Makkah & Saja By Warwick Madinah",
+    "Jawhara Maysan Hotel in Azizia",
+    "Azizia separate room available",
+    "Azizia full board meals",
+    "Half board meals in Makkah, Madinah & Mina",
+    "Visa processing",
+    "All ground transfers",
+    "Shorter trip — 16 days total",
+  ],
+
+  available: true,
+
+  description:
+    "A 16-day Hajj package with premium accommodation at Anjum Hotel Makkah and Saja By Warwick Madinah, including Maktab A for Mina. Jawhara Maysan Hotel in Azizia provides full board meals and separate room options. Ideal for pilgrims with limited time who don't want to compromise on comfort and quality.",
+
+  transport:
+    "Private air-conditioned coaches for all transfers. Inter-city travel between Madinah, Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites.",
+
+  itinerary: [
+    { date: "7–10 May", location: "Saja By Warwick Madinah" },
+    { date: "10–13 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "13–18 May", location: "Mina (Hajj rituals)" },
+    { date: "18–20 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "20–23 May", location: "Anjum Hotel Makkah" },
+  ],
+
+  ziyarahMakkah: [
+    "Jabal al-Nour (Cave of Hira)",
+    "Jabal Thawr",
+    "Masjid al-Jinn",
+    "Hudaibiyah",
+    "Mina, Arafat & Muzdalifah",
+  ],
+
+  ziyarahMadinah: [
+    "Masjid al-Quba",
+    "Masjid al-Qiblatayn",
+    "Mount Uhud & Martyrs Cemetery",
+    "Seven Mosques",
+  ],
+},
+
+{
+  id: "hajj-2027-14-days",
+  name: "14 Days Hajj Package 2027",
+  category: "hajj",
+  country: "Saudi Arabia",
+  image: "/images/saja3.jpg",
+  gallery: [
+    "/images/saja3.jpg",
+    "/images/saja7.jpg",
+    "/images/saja8.jpg",
+    "/images/saja1.jpg",
+    "/images/kaaba.webp",
+    "/images/madinah.webp",
+  ],
+  durationDays: 14,
+  departFrom: "Saudi Arabia",
+  arriveTo: "Jeddah",
+  dateRange: "9 May – 23 May 2027",
+  airline: "Flights Not Included",
+  rating: 5,
+  reviews: 0,
+  startFrom: "£6,700",
+
+  sharingOptions: [
+    { label: "Quad Sharing", price: "£6,700" },
+    { label: "Triple Sharing", price: "£7,150" },
+    { label: "Double Sharing", price: "£7,600" },
+  ],
+
+  hotels: [
+    {
+      city: "Azizia",
+      name: "Jawhara Maysan Hotel",
+      meal: "Full Board",
+      roomType: "Separate Room",
+      separateRoomRates: {
+        triple: "£325 per person",
+        double: "£650 per person",
+      },
+    },
+    {
+      city: "Mina",
+      name: "Maktab A — Premium Tent",
+      meal: "Half Board",
+    },
+    {
+      city: "Makkah",
+      name: "Anjum Hotel Makkah",
+      meal: "Half Board",
+    },
+    {
+      city: "Madinah",
+      name: "Saja By Warwick Madinah",
+      meal: "Half Board",
+    },
+  ],
+
+  features: [
+    "⚠ Flights NOT included — land package only",
+    "Premium Maktab A tent in Mina — closest to Jamarat",
+    "Anjum Hotel Makkah",
+    "Saja By Warwick Madinah",
+    "Jawhara Maysan Hotel in Azizia",
+    "Azizia separate room available",
+    "Azizia full board meals",
+    "Half board meals in Makkah & Mina",
+    "Visa processing",
+    "All ground transfers in Saudi Arabia",
+    "Experienced guide & group leader",
+  ],
+
+  badge: "Land Package",
+  available: true,
+
+  description:
+    "Our land-only 14-day Hajj package — perfect for pilgrims who prefer to arrange their own flights or are travelling from outside the UK. Includes Maktab A (premium tent) for Mina, Jawhara Maysan Hotel in Azizia with full board, and premium accommodation at Anjum Hotel Makkah. Separate room options are available in Azizia with additional charges. Flights are NOT included.",
+
+  transport:
+    "All ground transport within Saudi Arabia included — airport pickup from Jeddah, transfers to Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites including Arafat and Muzdalifah. Flights to Jeddah must be arranged separately.",
+
+  itinerary: [
+    { date: "9–13 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "13–18 May", location: "Mina (Hajj rituals)" },
+    { date: "18–20 May", location: "Jawhara Maysan Hotel, Azizia" },
+    { date: "20–23 May", location: "Anjum Hotel Makkah" },
+  ],
+
+  ziyarahMakkah: [
+    "Jabal al-Nour (Cave of Hira)",
+    "Jabal Thawr",
+    "Masjid al-Jinn",
+    "Hudaibiyah",
+    "Mina, Arafat & Muzdalifah",
+    "Exhibition of the Two Holy Mosques",
+  ],
+
+  ziyarahMadinah: [],
+},
 ];
 export const umrahPackages: Package[] = [
 
