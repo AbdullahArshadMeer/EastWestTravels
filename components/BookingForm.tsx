@@ -16,8 +16,10 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
 
   // Active sharing options (depend on Maktab tier for Hajj, or pkg.sharingOptions for others)
   const activeMaktab: MaktabOption | undefined = pkg.maktabOptions?.[selectedMaktabIdx];
-  const activeSharingOptions: SharingOption[] =
-    activeMaktab?.sharingOptions || pkg.sharingOptions || [];
+  const activeSharingOptions: SharingOption[] = useMemo(
+    () => activeMaktab?.sharingOptions || pkg.sharingOptions || [],
+    [activeMaktab, pkg.sharingOptions]
+  );
 
   // Base price = Quad Sharing (always the cheapest = the first option)
   const basePrice = activeSharingOptions[0] ? parsePrice(activeSharingOptions[0].price) : 0;
