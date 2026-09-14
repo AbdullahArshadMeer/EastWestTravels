@@ -8,6 +8,7 @@ import type { Package } from "@/data/packages";
 export default function PackageCard({ pkg }: { pkg: Package }) {
   const [showFeatures, setShowFeatures] = useState(false);
   const detailUrl = `/packages/${pkg.category}/${pkg.id}`;
+  const isSoldOut = pkg.available === false;
 
   return (
     <div className="group bg-white rounded-2xl border border-cream-200 overflow-hidden hover:shadow-lift transition-all duration-300 flex flex-col">
@@ -27,10 +28,16 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
               {pkg.badge}
             </span>
           )}
-          {pkg.available && (
-            <span className="px-3 py-1.5 rounded-lg bg-brand-600/90 backdrop-blur-sm text-white text-[11px] font-bold tracking-wide">
-              Available
+          {isSoldOut ? (
+            <span className="px-3 py-1.5 rounded-lg bg-ink/80 backdrop-blur-sm text-white text-[11px] font-bold tracking-wide">
+              Sold Out
             </span>
+          ) : (
+            pkg.available && (
+              <span className="px-3 py-1.5 rounded-lg bg-brand-600/90 backdrop-blur-sm text-white text-[11px] font-bold tracking-wide">
+                Available
+              </span>
+            )
           )}
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
@@ -40,11 +47,13 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
               {pkg.durationDays > 0 ? `${pkg.durationDays} Days` : "Custom Duration"}
             </div>
           </div>
-          <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm rounded-lg px-2.5 py-1.5">
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-            <span className="text-white text-[12px] font-bold">{pkg.rating}.0</span>
-            <span className="text-white/70 text-[11px]">({pkg.reviews})</span>
-          </div>
+          {pkg.category !== "hajj" && (
+            <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm rounded-lg px-2.5 py-1.5">
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              <span className="text-white text-[12px] font-bold">{pkg.rating}.0</span>
+              <span className="text-white/70 text-[11px]">({pkg.reviews})</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -112,6 +121,26 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
                 <div className="text-[15px] font-extrabold text-brand-700 mt-1">{opt.price}</div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* SEPARATE ROOM — AZIZIA (Hajj packages) */}
+        {pkg.azizariaSeparateRoom && pkg.azizariaSeparateRoom.length > 0 && (
+          <div className="mb-4">
+            <div className="text-[10px] font-bold text-ink-muted uppercase tracking-wider mb-1.5 text-center">
+              Separate Room – Azizia
+            </div>
+            <div className="grid grid-cols-2 gap-1.5">
+              {pkg.azizariaSeparateRoom.map((opt, i) => (
+                <div
+                  key={i}
+                  className="text-center py-2.5 px-1 rounded-xl border-2 border-amber-400/40 bg-amber-50/50"
+                >
+                  <div className="text-[9px] font-bold text-ink-soft uppercase tracking-wider leading-tight">{opt.label}</div>
+                  <div className="text-[15px] font-extrabold text-amber-800 mt-1">{opt.price}</div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
@@ -184,18 +213,29 @@ export default function PackageCard({ pkg }: { pkg: Package }) {
                 <div className="text-[11px] text-ink-muted mt-0.5">per person</div>
               )}
             </div>
-            {pkg.popular && (
+            {pkg.popular && !isSoldOut && (
               <span className="px-2.5 py-1 rounded-full bg-brand-50 text-brand-700 text-[10px] font-bold uppercase tracking-wider">
                 Popular
               </span>
             )}
           </div>
-          <Link
-            href={detailUrl}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-600 text-white text-sm font-bold hover:bg-brand-700 transition-all hover:shadow-soft"
-          >
-            Book Now <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          {isSoldOut ? (
+            <button
+              type="button"
+              disabled
+              aria-disabled="true"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cream-200 text-ink-muted text-sm font-bold cursor-not-allowed"
+            >
+              Sold Out
+            </button>
+          ) : (
+            <Link
+              href={detailUrl}
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-600 text-white text-sm font-bold hover:bg-brand-700 transition-all hover:shadow-soft"
+            >
+              Book Now <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          )}
         </div>
       </div>
     </div>

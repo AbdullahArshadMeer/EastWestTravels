@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
-import { User, Mail, Phone, Users, Send, ShieldCheck, FileText, Tent, BedDouble } from "lucide-react";
+import { User, Mail, Phone, Users, Send, ShieldCheck, FileText, Tent, BedDouble, Home } from "lucide-react";
 import type { Package, MaktabOption, SharingOption } from "@/data/packages";
 
 // Helper: parse "£6,750" → 6750
@@ -23,6 +23,12 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
   const basePrice = activeSharingOptions[0] ? parsePrice(activeSharingOptions[0].price) : 0;
   const baseLabel = activeSharingOptions[0]?.label || "Base";
 
+  // Azizia separate room add-on choices — "None" first, then the package's options
+  const azizariaChoices: SharingOption[] = useMemo(() => {
+    if (!pkg.azizariaSeparateRoom || pkg.azizariaSeparateRoom.length === 0) return [];
+    return [{ label: "None", price: "£0" }, ...pkg.azizariaSeparateRoom];
+  }, [pkg.azizariaSeparateRoom]);
+
   // Form state
   const [form, setForm] = useState({
     name: "",
@@ -30,6 +36,7 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
     phone: "",
     travelers: "1",
     sharingIdx: 0, // 0 = base (Quad), 1 = Triple, 2 = Double
+    azizariaIdx: 0, // 0 = None
     notes: "",
   });
   const [submitting, setSubmitting] = useState(false);
@@ -44,7 +51,12 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
 
     const baseTotal = basePrice * travelers;
     const upgradeTotal = upgradePerPerson * travelers;
-    const total = baseTotal + upgradeTotal;
+
+    const selectedAzizaria = azizariaChoices[form.azizariaIdx];
+    const azizariaPerPerson = selectedAzizaria ? parsePrice(selectedAzizaria.price) : 0;
+    const azizariaTotal = azizariaPerPerson * travelers;
+
+    const total = baseTotal + upgradeTotal + azizariaTotal;
 
     return {
       travelers,
@@ -52,10 +64,13 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
       baseTotal,
       upgradePerPerson,
       upgradeTotal,
+      azizariaPerPerson,
+      azizariaTotal,
+      azizariaLabel: selectedAzizaria?.label || "None",
       total,
       selectedSharingLabel: selectedSharing?.label || baseLabel,
     };
-  }, [form.travelers, form.sharingIdx, basePrice, baseLabel, activeSharingOptions]);
+  }, [form.travelers, form.sharingIdx, form.azizariaIdx, basePrice, baseLabel, activeSharingOptions, azizariaChoices]);
 
   // Reset sharing selection when Maktab changes
   const handleMaktabChange = (idx: number) => {
@@ -85,6 +100,7 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
             : pkg.name,
           packageCategory: pkg.category,
           sharingType: calculation.selectedSharingLabel,
+          azizariaRoomType: calculation.azizariaTotal > 0 ? calculation.azizariaLabel : undefined,
           finalPrice: calculation.total,
         }),
       });
@@ -111,12 +127,18 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
 
     msgLines.push(``);
     msgLines.push(`*Room Type:* ${calculation.selectedSharingLabel}`);
+    if (calculation.azizariaTotal > 0) {
+      msgLines.push(`*Azizia Separate Room:* ${calculation.azizariaLabel}`);
+    }
     msgLines.push(`*Travelers:* ${calculation.travelers}`);
     msgLines.push(``);
     msgLines.push(`💰 *Price Breakdown:*`);
     msgLines.push(`Base (${baseLabel}): £${calculation.baseTotal.toLocaleString()}`);
     if (calculation.upgradeTotal > 0) {
       msgLines.push(`Upgrade fee: +£${calculation.upgradeTotal.toLocaleString()}`);
+    }
+    if (calculation.azizariaTotal > 0) {
+      msgLines.push(`Azizia separate room (${calculation.azizariaLabel}): +£${calculation.azizariaTotal.toLocaleString()}`);
     }
     msgLines.push(`*Total: £${calculation.total.toLocaleString()}*`);
     msgLines.push(``);
@@ -266,6 +288,63 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
           </div>
         )}
 
+        {/* Azizia separate room — optional add-on, Hajj packages only */}
+        {azizariaChoices.length > 0 && (
+          <div>
+            <label className="text-[11px] font-bold uppercase tracking-wider text-ink-muted mb-1.5 block flex items-center gap-1.5">
+              <Home className="w-3.5 h-3.5 text-brand-600" />
+              Azizia Separate Room
+            </label>
+
+            <div className="space-y-1.5">
+              {azizariaChoices.map((opt, i) => {
+                const optPrice = parsePrice(opt.price);
+                const isActive = form.azizariaIdx === i;
+                const isNone = i === 0;
+
+                return (
+                  <label
+                    key={i}
+                    className={`flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all ${
+                      isActive
+                        ? "border-brand-600 bg-brand-50"
+                        : "border-cream-200 bg-cream-50 hover:border-brand-300"
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="azizaria"
+                      checked={isActive}
+                      onChange={() => setForm({ ...form, azizariaIdx: i })}
+                      className="w-4 h-4 accent-brand-600 flex-shrink-0"
+                    />
+                    <div className="flex-1 flex items-center justify-between gap-2 min-w-0">
+                      <div className="min-w-0">
+                        <div className={`text-sm font-bold ${isActive ? "text-brand-700" : "text-ink"}`}>
+                          {opt.label}
+                        </div>
+                        {!isNone && (
+                          <div className="text-[11px] text-ink-muted">
+                            £{optPrice.toLocaleString()}/person
+                          </div>
+                        )}
+                        {isNone && (
+                          <div className="text-[11px] text-green-700">No separate room needed</div>
+                        )}
+                      </div>
+                      {!isNone && (
+                        <span className={`text-[11px] font-bold whitespace-nowrap ${isActive ? "text-brand-700" : "text-amber-700"}`}>
+                          +£{optPrice.toLocaleString()}/pp
+                        </span>
+                      )}
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Notes */}
         <div>
           <label className="text-[11px] font-bold uppercase tracking-wider text-ink-muted mb-1.5 block flex items-center gap-1.5">
@@ -297,6 +376,16 @@ export default function BookingForm({ pkg }: { pkg: Package }) {
                 </span>
                 <span className="font-semibold text-amber-700">
                   +£{calculation.upgradeTotal.toLocaleString()}
+                </span>
+              </div>
+            )}
+            {calculation.azizariaTotal > 0 && (
+              <div className="flex justify-between">
+                <span className="text-ink-soft">
+                  Azizia separate room ({calculation.azizariaLabel}) × {calculation.travelers}
+                </span>
+                <span className="font-semibold text-amber-700">
+                  +£{calculation.azizariaTotal.toLocaleString()}
                 </span>
               </div>
             )}

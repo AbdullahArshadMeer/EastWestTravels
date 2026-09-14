@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Star, Plane, Calendar, Clock, Building2, ChevronRight, MapPin } from "lucide-react";
+import { Star, Plane, Calendar, Clock, Building2, ChevronRight, MapPin, Info } from "lucide-react";
 import ImageGallery from "./ImageGallery";
 import BookingForm from "./BookingForm";
 import PackageTabs from "./PackageTabs";
@@ -7,6 +7,7 @@ import type { Package } from "@/data/packages";
 
 export default function PackageDetail({ pkg }: { pkg: Package }) {
   const categoryLabel = pkg.category.charAt(0).toUpperCase() + pkg.category.slice(1);
+  const isSoldOut = pkg.available === false;
 
   return (
     <>
@@ -27,6 +28,13 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
         {/* Header: Title + Price */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
           <div>
+            {isSoldOut && (
+              <div className="mb-2">
+                <span className="px-3 py-1 rounded-lg bg-ink/80 text-white text-[11px] font-bold tracking-wide uppercase">
+                  Sold Out
+                </span>
+              </div>
+            )}
             <h1 className="font-display text-2xl md:text-3xl font-extrabold text-ink tracking-tight">
               {pkg.name}
             </h1>
@@ -130,6 +138,38 @@ export default function PackageDetail({ pkg }: { pkg: Package }) {
             ))}
           </div>
         )}
+
+        {/* Separate Room — Azizia (Hajj packages) */}
+{pkg.azizariaSeparateRoom && pkg.azizariaSeparateRoom.length > 0 && (
+  <div className="bg-amber-50/60 rounded-xl border border-amber-200 overflow-hidden mb-6">
+    <div className="px-4 py-2.5">
+      <div className="font-display text-sm font-bold text-amber-900">Separate Room – Azizia</div>
+      <div className="text-[11px] text-amber-800/80 mt-0.5">
+        Optional upgrade if you'd prefer your own private room during the Azizia stay
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4 px-4 pb-2.5 flex-wrap">
+      {pkg.azizariaSeparateRoom.map((opt, i) => {
+        const roomType = opt.label.replace(/\s*\(per person\)/i, "");
+        return (
+          <div key={i} className="flex items-baseline gap-1.5 text-sm">
+            <span className="font-semibold text-ink-soft">{roomType}:</span>
+            <span className="font-bold text-amber-900">{opt.price}</span>
+            <span className="text-[10px] text-ink-muted">/person</span>
+          </div>
+        );
+      })}
+    </div>
+
+    <div className="flex items-start gap-1.5 px-4 pb-2.5 pt-1.5 border-t border-amber-200/70">
+      <Info className="w-3 h-3 text-amber-700 mt-0.5 flex-shrink-0" />
+      <p className="text-[11px] text-ink-soft leading-relaxed">
+        <span className="font-semibold text-ink">Note:</span> Per person charge for the Azizia accommodation only, in addition to your base package price. Rooms are allocated on request and subject to availability.
+      </p>
+    </div>
+  </div>
+)}
 
         {/* Info row */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-soft mb-3">
