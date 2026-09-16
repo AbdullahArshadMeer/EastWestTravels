@@ -168,7 +168,7 @@ export const hajjPackages: Package[] = [
     name: "14 Days Hajj Package 2027",
     category: "hajj",
     country: "Saudi Arabia",
-    image: "/images/saja3.jpg",
+    image:      "/images/Azizahotel.jpg",
     gallery: [
       "/images/saja3.jpg",
       "/images/saja7.jpg",
@@ -176,6 +176,7 @@ export const hajjPackages: Package[] = [
       "/images/saja1.jpg",
       "/images/kaaba.webp",
       "/images/madinah.webp",
+      "/images/Azizahotel.jpg",
     ],
     durationDays: 14,
     departFrom: "Manchester",
