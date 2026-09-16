@@ -208,7 +208,6 @@ export const hajjPackages: Package[] = [
       "All ground transfers in Saudi Arabia",
       "Experienced guide & group leader",
     ],
-    badge: "Land Package",
     available: true,
     description: "Our land-only 14-day Hajj package — perfect for pilgrims who prefer to arrange their own flights or are travelling from outside the UK. Includes Maktab A Premium Tents for Mina. Package starts on arrival in Jeddah and includes all accommodation (Jawhara Maysan Hotel Azizia, Mina tent, Anjum Hotel Makkah), meals, transfers, and Hajj rituals. Flights are NOT included.",
     transport: "All ground transport within Saudi Arabia included — airport pickup from Jeddah, transfers to Azizia, Mina, and Makkah. Dedicated transport to all Hajj ritual sites including Arafat and Muzdalifah. Flights to Jeddah must be arranged separately.",

@@ -38,12 +38,12 @@ export default function ImageGallery({ images, alt }: { images: string[]; alt: s
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-2 mt-3">
+      <div className="flex gap-2 mt-3 overflow-x-auto pb-1 -mx-1 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {images.map((src, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0 transition-all ${
+            className={`relative w-16 h-12 sm:w-20 sm:h-16 rounded-lg overflow-hidden flex-shrink-0 transition-all ${
               i === active
                 ? "ring-2 ring-brand-600 ring-offset-2"
                 : "opacity-60 hover:opacity-100"

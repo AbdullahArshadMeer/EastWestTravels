@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import HajjPopup from "@/components/HajjPopup";
@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "East West Travels | Hajj & Umrah Packages | Stoke-On-Trent",
   description:
     "Premium Hajj and Umrah packages from East West Travels (Stoke-On-Trent) Ltd. ATOL protected, 11+ years experience, trusted by 5000+ pilgrims.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
