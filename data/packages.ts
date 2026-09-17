@@ -264,30 +264,13 @@ export const umrahPackages: Package[] = [
   },
    // ── WINTER DECEMBER PACKAGES (Dec 2026) ──
   
-  {
-    id: "umrah-winter-dec-11", name: "Warmer Winter December Holidays – 11 Days", category: "umrah", country: "Saudi Arabia",
-    image: "/images/saja8.jpg",
-    gallery: ["/images/saja8.jpg", "/images/emaar2.jpg", "/images/emaar3.jpg", "/images/madinah.webp", "/images/kaaba2.webp"],
-    durationDays: 11, departFrom: "Manchester", arriveTo: "Jeddah",
-    dateRange: "20 Dec – 31 Dec 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,750",
-    sharingOptions: [{ label: "Quad Sharing", price: "£1,750" }, { label: "Triple Sharing", price: "£1,895" }, { label: "Double Sharing", price: "£2,095" }],
-    features: ["Return flights from Madinah", "Emaar Grand Hotel ,Makkah", "Saja by warwick Madinah", "Visa processing", "Airport transfers & ground transport", "Guided Ziyarat in Makkah & Madinah", "24/7 group support"],
-    hotels: [
-      { city: "Makkah", name: "Emaar Al Grand Hotel"},
-      { city: "Madinah", name: "Al Eiman Royal Hotel"},
-    ],
-    badge: "5-Star Package Upgrade Available", available: false,
-    description: "Escape the UK winter with an 11-day Umrah journey during the December holidays. Fly from Birmingham to Jeddah with Egypt Air,Stay at the Emaar Grand Hotel in Makkah with Bed & Breakfast and the Saja Al Madinah Hotel in Madinah on a Room Only basis. Guided Ziyarat tours in both holy cities and 24/7 group support included.",
-    transport: "Return flights with Egypt Air from Madinah. Private air-conditioned coaches for airport transfers, inter-city travel, and all Ziyarat tours.",
-    ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah"],
-    ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Seven Mosques"],
-  },
+  
 {
   id: "umrah-winter-dec-11",
   name: "Warmer Winter December Holidays – 11 Days",
   category: "umrah",
   country: "Saudi Arabia",
-  image: "/images/saja8.jpg",
+  image: "/images/saja1.jpg",
   gallery: [
     "/images/saja8.jpg",
     "/images/emaar2.jpg",
@@ -322,11 +305,11 @@ export const umrahPackages: Package[] = [
 
   hotels: [
     { city: "Makkah", name: "Emaar Al Grand Hotel" },
-    { city: "Madinah", name: "Al Eiman Royal Hotel" }
+    { city: "Madinah", name: "Saja by Warwick Hotel" }
   ],
 
   badge: "5-Star Package Upgrade Available",
-  available: false,
+  available: true,
 
   description: "Experience a memorable 11-day Umrah journey during the December holidays, escaping the UK winter for the warmth and spirituality of Saudi Arabia. Depart from Heathrow to Jeddah and enjoy comfortable stays in Makkah and Madinah, with guided Ziyarat tours, visa processing, airport transfers and 24/7 group support included throughout your journey.",
 
@@ -345,7 +328,25 @@ export const umrahPackages: Package[] = [
     "Mount Uhud & Martyrs Cemetery",
     "Seven Mosques"
   ],
-}
+},
+{
+    id: "umrah-winter-dec-11", name: "Warmer Winter December Holidays – 11 Days", category: "umrah", country: "Saudi Arabia",
+    image: "/images/saja8.jpg",
+    gallery: ["/images/saja8.jpg", "/images/emaar2.jpg", "/images/emaar3.jpg", "/images/madinah.webp", "/images/kaaba2.webp"],
+    durationDays: 11, departFrom: "Manchester", arriveTo: "Jeddah",
+    dateRange: "20 Dec – 31 Dec 2026", airline: "Saudia Airline", rating: 5, reviews: 584, startFrom: "£1,750",
+    sharingOptions: [{ label: "Quad Sharing", price: "£1,750" }, { label: "Triple Sharing", price: "£1,895" }, { label: "Double Sharing", price: "£2,095" }],
+    features: ["Return flights from Madinah", "Emaar Grand Hotel ,Makkah", "Saja by warwick Madinah", "Visa processing", "Airport transfers & ground transport", "Guided Ziyarat in Makkah & Madinah", "24/7 group support"],
+    hotels: [
+      { city: "Makkah", name: "Emaar Al Grand Hotel"},
+      { city: "Madinah", name: "Al Eiman Royal Hotel"},
+    ],
+    badge: "5-Star Package Upgrade Available", available: false,
+    description: "Escape the UK winter with an 11-day Umrah journey during the December holidays. Fly from Birmingham to Jeddah with Egypt Air,Stay at the Emaar Grand Hotel in Makkah with Bed & Breakfast and the Saja Al Madinah Hotel in Madinah on a Room Only basis. Guided Ziyarat tours in both holy cities and 24/7 group support included.",
+    transport: "Return flights with Egypt Air from Madinah. Private air-conditioned coaches for airport transfers, inter-city travel, and all Ziyarat tours.",
+    ziyarahMakkah: ["Jabal al-Nour (Cave of Hira)", "Jabal Thawr", "Masjid al-Jinn", "Hudaibiyah"],
+    ziyarahMadinah: ["Masjid al-Quba", "Masjid al-Qiblatayn", "Mount Uhud & Martyrs Cemetery", "Seven Mosques"],
+  },
   {
     id: "umrah-oct-halfterm-14", name: "October Half Term Holidays 2026 – 14 Days", category: "umrah", country: "Saudi Arabia",
     image: "/images/saja3.jpg",
