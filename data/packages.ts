@@ -279,7 +279,7 @@ export const umrahPackages: Package[] = [
     "/images/kaaba2.webp"
   ],
   durationDays: 11,
-  departFrom: "Heathrow",
+  departFrom: "London(Heathrow)",
   arriveTo: "Jeddah",
   dateRange: "20 Dec – 31 Dec 2026",
   airline: "Saudia Airline",
